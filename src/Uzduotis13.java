@@ -10,6 +10,10 @@ public class Uzduotis13 {
     public static void main(String[] args) {
         Connection connection = JdbcUtils.createConnection();
         if (connection!=null){
+            if(JdbcUtils.isTableExist(connection, "student_mark")){
+                System.out.println("student_mark egzistuoja");
+            }
+
             System.out.println("Duomenys pries pakeitima");
             JdbcUtils.printStudentsMarks(connection);
             try {
